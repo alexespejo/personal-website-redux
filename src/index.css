@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+ background-color: #008080;
+ @apply text-gray-800;
+ font-family: "Pixelify Sans", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 400;
+ font-style: normal;
+ overflow: hidden;
+}
+
+.retro-border {
+ @apply border-[0.2rem] bg-gray-300 border-r-gray-500 border-b-gray-500 border-t-gray-200 border-l-gray-200;
+}
+.retro-border-invert {
+ @apply border-[0.2rem] bg-gray-300 border-r-gray-200 border-b-gray-200 border-t-gray-500 border-l-gray-500;
+}
+.retro-border-btn {
+ @apply active:border-r-gray-200 active:border-b-gray-200 active:border-t-gray-500 active:border-l-gray-500;
+}
+.icon-btn {
+ @apply text-2xl p-1  h-9 w-9 flex items-center justify-center;
+}
