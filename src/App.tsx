@@ -75,14 +75,14 @@ function App() {
 
     <DesktopApp
      constraintsRef={constraintsRef}
-     position="top-[20%] left-[10%]"
+     position="top-[21%] left-[15%]"
      imageSrc={directoryClosed}
      label="Projects"
     />
 
     <DesktopApp
      constraintsRef={constraintsRef}
-     position="top-[32%] right-[20%]"
+     position="top-[50%] left-[24%]"
      imageSrc={directoryOpen}
      label="Resume"
     />

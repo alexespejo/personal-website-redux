@@ -8,14 +8,20 @@ const Photo = ({
  src,
  alt,
  label,
+ className,
 }: {
  src: string;
  alt: string;
  label: string;
+ className?: string;
 }) => {
  return (
-  <li className="flex flex-col items-center gap-1 w-20 justify-center break-words">
-   <img src={src} alt={alt} className="" />
+  <li
+   className={`flex flex-col items-center gap-1 w-20 justify-center break-words ${className}`}
+  >
+   <a href={src} target="_blank" rel="noopener noreferrer">
+    <img src={src} alt={alt} className="shadow-md" />
+   </a>
    <span className="text-xs break-words w-20">{label}</span>
   </li>
  );
@@ -41,7 +47,12 @@ export const PhotosDialog = ({
     <Photo src={one} alt="one" label="1-1.png" />
     <Photo src={two} alt="two" label="1-2.png" />
     <Photo src={three} alt="three" label="1-3.png" />
-    <Photo src={random} alt="random" label="1653003413525.jpeg" />
+    <Photo
+     src={random}
+     alt="random"
+     label="1653003413525.jpeg"
+     className="sm:absolute bottom-[16%] right-[20%]"
+    />
    </ul>
   </DialogWindow>
  );
