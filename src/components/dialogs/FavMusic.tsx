@@ -30,6 +30,7 @@ export const FavMusicDialog = ({
         src={album.image}
         alt={album.title}
         className="w-20 h-20 sm:w-24 sm:h-24"
+        loading="lazy"
        />
       </li>
      ))}
