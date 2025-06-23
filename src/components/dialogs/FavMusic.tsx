@@ -26,7 +26,11 @@ export const FavMusicDialog = ({
      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
      .map((album) => (
       <li key={album.title}>
-       <img src={album.image} alt={album.title} className="w-20 h-20" />
+       <img
+        src={album.image}
+        alt={album.title}
+        className="w-20 h-20 sm:w-24 sm:h-24"
+       />
       </li>
      ))}
    </ul>

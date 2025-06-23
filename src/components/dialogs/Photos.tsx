@@ -1,6 +1,25 @@
 import { DialogWindow } from "@components/DialogWindow";
-import { albums } from "@utils/albums";
+import one from "@assets/photos/1-1.png";
+import two from "@assets/photos/1-2.png";
+import three from "@assets/photos/1-3.png";
+import random from "@assets/photos/1653003413525.jpeg";
 
+const Photo = ({
+ src,
+ alt,
+ label,
+}: {
+ src: string;
+ alt: string;
+ label: string;
+}) => {
+ return (
+  <li className="flex flex-col items-center gap-1 w-20 justify-center break-words">
+   <img src={src} alt={alt} className="" />
+   <span className="text-xs break-words w-20">{label}</span>
+  </li>
+ );
+};
 interface PhotosDialogProps {
  open: boolean;
  onClose: () => void;
@@ -18,17 +37,11 @@ export const PhotosDialog = ({
    open={open}
    onClose={onClose}
   >
-   <h1 className="font-mono text-[0.6rem]">
-    Hip Hop Albums I like - too lazy too lazy to describe why
-   </h1>
-   <ul className="flex flex-wrap gap-1 items-start justify-center">
-    {albums
-     .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
-     .map((album) => (
-      <li key={album.title}>
-       <img src={album.image} alt={album.title} className="w-20 h-20" />
-      </li>
-     ))}
+   <ul className="flex items-end gap-2">
+    <Photo src={one} alt="one" label="1-1.png" />
+    <Photo src={two} alt="two" label="1-2.png" />
+    <Photo src={three} alt="three" label="1-3.png" />
+    <Photo src={random} alt="random" label="1653003413525.jpeg" />
    </ul>
   </DialogWindow>
  );
