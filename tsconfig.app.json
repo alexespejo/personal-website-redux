@@ -28,6 +28,7 @@
    "@/*": ["src/*"],
    "@components/*": ["src/components/*"],
    "@assets/*": ["src/assets/*"],
+   "@public/*": ["public/*"],
    "@styles/*": ["src/styles/*"],
    "@utils/*": ["src/utils/*"]
   }

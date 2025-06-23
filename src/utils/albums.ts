@@ -37,8 +37,9 @@ import mmesyf from "@assets/albums/mmesyf.png";
 import kotms from "@assets/albums/kotms.png";
 import tpab from "@assets/albums/tpab.png";
 import untilted_unmastered from "@assets/albums/untitled_unmastered.png";
-import malibu from "@assets/albums/malibu.png";
 import tns from "@assets/albums/tns.png";
+import its_almost_dry from "@assets/albums/its_almost_dry.png";
+import daytona from "@assets/albums/daytona.png";
 
 type Album = {
  image: string;
@@ -253,15 +254,21 @@ export const albums: Album[] = [
   releaseDate: "2016",
  },
  {
-  image: malibu,
-  artist: "Anderson .Paak",
-  title: "Malibu",
-  releaseDate: "2016",
- },
- {
   image: tns,
   artist: "JID",
   title: "The Never Story",
   releaseDate: "2014",
+ },
+ {
+  image: its_almost_dry,
+  artist: "Pusha T",
+  title: "It's Almost Dry",
+  releaseDate: "2022",
+ },
+ {
+  image: daytona,
+  artist: "Pusha T",
+  title: "Daytona",
+  releaseDate: "2018",
  },
 ];

@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { getCurrentZIndex, setZIndex } from "@utils/zIndexManager";
+import { MdClose } from "react-icons/md";
+import { useCallback, useEffect, useState } from "react";
 
 interface DialogWindowProps {
  children: React.ReactNode;
@@ -17,6 +20,23 @@ export function DialogWindow({
  className,
  onClose,
 }: DialogWindowProps) {
+ const [zIndex, setZdex] = useState(getCurrentZIndex());
+
+ const adjustZIndex = () => {
+  return getCurrentZIndex() + 1;
+ };
+
+ const updateZIndex = useCallback(() => {
+  setZIndex(adjustZIndex());
+  setZdex(adjustZIndex());
+ }, []);
+
+ useEffect(() => {
+  if (open) {
+   setZdex(adjustZIndex);
+  }
+ }, [open]);
+
  return (
   <motion.dialog
    open={open}
@@ -24,7 +44,10 @@ export function DialogWindow({
    dragConstraints={constraintsRef || undefined}
    dragElastic={0.2}
    dragMomentum={false}
-   className={`z-10 w-full h-full sm:w-1/2 sm:h-3/4 absolute top-0 left-0 retro-border ${className}`}
+   style={{ zIndex }}
+   onDragStart={updateZIndex}
+   onClick={updateZIndex}
+   className={`w-full h-full sm:w-1/2 sm:h-3/4 absolute top-0 left-0 retro-border ${className}`}
   >
    <div className="w-full bg-blue-900 text-white text-xs px-0.5 py-1 flex justify-between items-center h-[4%] sm:h-[6%]">
     <span>{title}</span>
@@ -32,7 +55,7 @@ export function DialogWindow({
      onClick={onClose}
      className="retro-border text-black w-5 h-5 font-bold flex items-center justify-center retro-border-btn"
     >
-     x
+     <MdClose />
     </button>
    </div>
 

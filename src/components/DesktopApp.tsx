@@ -27,6 +27,7 @@ const DesktopApp = ({
     position ? position + " absolute" : ""
    }`}
    onDoubleClick={ondblclick}
+   onTouchEnd={ondblclick}
   >
    {children}
    {imageSrc && (
